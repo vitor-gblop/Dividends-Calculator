@@ -41,31 +41,36 @@
         <div id="calculator-container" class="padding-2 display-flex flex-wrap gap-1">
             <div class="input-field display-flex flex-direction-column">
                 <span>Valor do ativo</span>
-                <input id="preco_ativo" type="number" value="9.53" placeholder="Valor do ativo">
+                <input id="preco_ativo" type="number" class="preco_ativo" name="preco_ativo"          onchange="calc()" placeholder="Valor do ativo">
             </div>
             <br>
             <div class="input-field display-flex flex-direction-column">
                 <span>Quantidade de cotas</span>
-                <input id="qtd_cotas" type="number" value="50" placeholder="quantidade de cotas">
+                <input id="qtd_cotas" type="number" value="50"              onchange="calc()" placeholder="Quantidade de cotas">
                 
             </div>
             <br>
             <div class="input-field display-flex flex-direction-column">
                 <span>Valor do dividendo</span>
-                <input id="valor_dividendo" type="number" value="0.1" placeholder="">
+                <input id="valor_dividendo" type="number" value="0.1"       onchange="calc()" placeholder="Valor do dividendo do ativo">
             </div>
             <br>
             <div class="input-field display-flex flex-direction-column">
                 <span>Tempo de aplicação(em meses)</span>
-                <input id="tempo_aplicacao" type="number" value="12" placeholder="">
+                <input id="tempo_aplicacao" type="number" value="12"        onchange="calc()" placeholder="Tempo de aplicação">
             </div>
             <br>
+
+            <div>
+                <span id="calc-display"></span>
+            </div>
+
             <!-- <div id="submit-field" class="width-100p flex-center-items">
                 <input type="submit" onclick="">
             </div> -->
         </div>
     </section>
 
-    <script src=""></script>
+    <script src="./src/features/calculator.js"></script>
 </body>
 </html>
