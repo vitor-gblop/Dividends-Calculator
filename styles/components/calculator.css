@@ -1,0 +1,15 @@
+
+.input-field 
+{
+    flex-grow: 1;
+    flex-basis: 200px;
+}
+
+#calculator #calculator-container input[type="number"]
+{
+    width: 100%;
+    padding: 10px;
+
+    border: 0.7px solid gray;
+    border-radius: 15px;   
+}
