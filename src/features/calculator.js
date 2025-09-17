@@ -28,7 +28,14 @@ function calc()
     displayResult();
 }
 const displayResult = ()=>{
-    let display = document.getElementById("calc-display");
+    let total_value = document.getElementById("valor-total-display");
+    let dividend_received = document.getElementById("dividendos-totais-display");
+    let total_patrimony = document.getElementById("total-patrimony-display");
+
+    total_value.innerText = ("\nVaor total dos ativos no fim do periodo: "+final_item_value)
+    dividend_received.innerText = ("\nDividendos recebidos: "+final_dividend_received);
+    total_patrimony.innerText = ("\nValor de patrimonio total: "+final_patrimony);
+
     console.log("\nVaor total de ativos: "+final_item_value+"\nDividendos recebidos: "+final_dividend_received+"\n\nValor de patrimonio total: "+final_patrimony);
     
 }
