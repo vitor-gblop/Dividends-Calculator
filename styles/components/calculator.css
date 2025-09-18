@@ -5,6 +5,12 @@
     flex-basis: 200px;
 }
 
+#calculator #calculator-container
+{
+    background-color: rgba(128, 128, 128, 0.174);
+    border-radius: 12px;
+    /* border: 0.7px solid black; */
+}
 #calculator #calculator-container input[type="number"]
 {
     width: 100%;
