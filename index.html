@@ -21,23 +21,41 @@
     </header>
     
 
-    <main class="padding-top-3">
-        
+    <main class="padding-3 width-80p margin-auto">
+        <h2>Noticias</h2>
+        <br>
+        <div class="news-card">
+            <h3 id="news-title">Titulo</h3>
+            <p id="resume">Resumo</p>
+            <span id="author"></span>
+        </div>
     </main>
 
     <section id="about" class="width-80p margin-auto">
         <h2>Sobre</h2>
+
         <div id="about-container" class="padding-2">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque iste dolore debitis, omnis libero  hic nesciunt, sed suscipit sit accusamus reprehenderit. Voluptatem molestiae laboriosam aliquid 
-            deleniti dolores molestias! Possimus, explicabo!
+            <p>Fundos Imobiliários (FIIs) são uma forma de investimento coletivo em que o dinheiro de diversos investidores é aplicado em ativos do mercado imobiliário. Ao comprar cotas de um FII, o investidor se torna um "condômino", recebendo rendimentos proporcionais aos lucros gerados pelo fundo.</p>
+            <br>
+            <h3>Como funciona</h3>
+            <ul id="how-work" class="margin-top-1">
+                <li class="margin-bottom-1">Captação de recursos: Uma gestora cria o fundo, divide-o em cotas e as vende na Bolsa de Valores.</li>
+                <li class="margin-bottom-1">Investimento: Com o dinheiro dos cotistas, o fundo investe em empreendimentos imobiliários, como shoppings, edifícios comerciais, hospitais, ou títulos de dívida imobiliária (CRIs, LCIs).</li>
+                
+                <li class="margin-bottom-1">Geração de renda: O fundo obtém lucro com a exploração dos imóveis (aluguéis, arrendamentos) ou com os juros dos títulos que possui.</li>
+
+                <li class="margin-bottom-1">Distribuição de lucros: A maior parte do lucro líquido é distribuída periodicamente aos cotistas, geralmente de forma mensal</li>
+            </ul>
         </div>
     </section>
 
     <br>
 
-    <section id="calculator" class="width-80p margin-auto ">
-        <h2>Calculadora</h2>
-        <p>TODO: Alternar as respostas com on change</p>
+    <section id="calculator" class="width-80p margin-auto">
+        <h2>Calculadora de fundo imobiliario</h2>
+
+        <p>Esta calculadora se baseia em valores principalmente estáticos. Em aplicações reais o valor e alterado devido variação no valor do ativo</p>
+        <br>
         <div id="calculator-container" class="padding-2 display-flex flex-wrap gap-1">
             <div class="input-field display-flex flex-direction-column">
                 <span>Valor do ativo</span>
@@ -73,6 +91,10 @@
         </div>
     </section>
 
-    <script src="./src/features/calculator.js"></script>
+    <footer class="width-80p margin-auto">
+        <span>contato</span>
+    </footer>
+
+    <script src="./src/features/fii_calculator.js"></script>
 </body>
 </html>
