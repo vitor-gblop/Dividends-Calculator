@@ -27,6 +27,7 @@ function calc()
     final_patrimony                 = final_item_value + final_dividend_received;
     displayResult();
 }
+
 const displayResult = ()=>{
     let total_value                 = document.getElementById("valor-total-display");
     let dividend_received           = document.getElementById("dividendos-totais-display");
