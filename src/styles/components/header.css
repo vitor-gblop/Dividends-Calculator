@@ -1,16 +1,18 @@
 
 body header 
 {
+    top: 15px;
+    padding: 0 10px 0 10px;
     width: fit-content;
-    top: 3%;
 
     animation: appear-top 500ms forwards; 
     will-change: opacity;
     
-    gap: 2em;
+    gap: 3%;
     
-    background-color: var(--header-dark-charcoal);
-    backdrop-filter: blur(5px);
+    /* background-color: var(--header-dark-charcoal); */
+    background-color: #1492f8c4;
+    backdrop-filter: blur(4px);
 
     border-radius: 15px;
     z-index: 5;
@@ -18,11 +20,16 @@ body header
 
 body header a
 {
-    padding: 15px 30px 15px 30px;
+    padding: 15px 10px 15px 10px;
     border-radius: 15px;
     transition: 500ms;
 }
 body header a:hover
 {
     background-color: rgb(59, 59, 59);
+}
+
+@media (max-width: 600px)
+{
+
 }
