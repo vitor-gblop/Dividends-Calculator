@@ -111,6 +111,7 @@
 .min-height-80vh { min-height: 80vh; }
 
 /* ===================== DISPLAY ===================== */
+.display-none { display: none; }
 .display-flex { display: flex; }
 .display-block { display: block; }
 
