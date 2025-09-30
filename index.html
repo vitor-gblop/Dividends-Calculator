@@ -17,9 +17,9 @@
         child-color-white
         ">
             <a href="#home">Home</a>
+            <a href="#news">News</a>
             <a href="#about">About</a>
-            <a href="#noticias">News</a>
-            <a href="#calculator">More</a>
+            <a href="#more-actions">More</a>
     </header>
 
     <br>
@@ -79,13 +79,13 @@
     <hr class="width-80p margin-auto">
     <br>
 
-    <section class="width-80p margin-auto">
+    <section id="news" class="width-80p margin-auto">
         <h2>Noticias</h2>
         <br>
         <div class="news-card">
-            <h3 id="news-title">Titulo</h3>
+            <img src="./src/assets/image.png" alt="">
             <p id="resume">Resumo</p>
-            <span id="author"></span>
+            <span id="author">lopes, vitor</span>
         </div>
     </section>
 
@@ -108,6 +108,7 @@
 
                 <li class="margin-bottom-1">Distribuição de lucros: A maior parte do lucro líquido é distribuída periodicamente aos cotistas, geralmente de forma mensal</li>
             </ul>
+            <a class="btn btn-primary" href="./src/views/calculadora/index.html" >Saber Mais</a>
         </div>
     </section>
 
@@ -115,74 +116,20 @@
     <hr class="width-80p margin-auto">
     <br>
 
-
-
-    <section id="calculator" class="width-80p margin-auto">
-        <h2>Calculadora de fundo imobiliario</h2>
-
-        <p>Esta calculadora se baseia em valores principalmente estáticos. Em aplicações reais o valor e alterado devido variação no valor do ativo</p>
-        <br>
-        
-        <button id="addCalculator" class="margin-bottom-1">Adicionar Novo Ativo</button>
-        <div id="calculators-wrapper">
-            <!-- Original calculator will be cloned and new ones added here -->
-            <div id="calculator-container-0" class="calculator-container calculator-instance padding-2 "> <!--Objeto-->
-                <div class="input-wrapper display-flex flex-wrap gap-1">
-                    <!-- <div class="input-field"> 
-                        <span>Código do FII</span>
-                        <input type="text" placeholder="Ex: XPLG11" class="fii-code">
-                        <div class="tooltip">Digite o código do FII na B3</div>
-                    </div> -->
-                    <div class="input-field">
-                        <span>Valor do ativo</span>
-                        <input id="preco_ativo-0" type="number" value="9.50" class="preco_ativo" name="preco_ativo" placeholder="Valor do ativo">
-                    </div>
-                    <div class="input-field">
-                        <span>Quantidade de cotas</span>
-                        <input id="qtd_cotas-0" type="number" value="50" placeholder="Quantidade de cotas">
-                    </div>
-                    <div class="input-field">
-                        <span>Valor do dividendo</span>
-                        <input id="valor_dividendo-0" type="number" value="0.1" placeholder="Valor do dividendo do ativo">
-                    </div>
-                    <div class="input-field">
-                        <span>Tempo de aplicação(em meses)</span>
-                        <input id="tempo_aplicacao-0" type="number" value="12" placeholder="Tempo de aplicação">
-                    </div>
-                </div>
-                <div class="button-group">
-                    <button class="btn btn-secondary" onclick="limparCampos(0)">Limpar Campos</button>
-                    <button class="btn btn-primary" onclick="calcularRendimento(0)">Calcular</button>
-                </div>
-                <div id="item-report-0" class="item-report display-flex flex-direction-column results">
-                    <span id="valor-total-display-0"></span>
-                    <span id="dividendos-totais-display-0"></span>
-                    <span id="total-patrimony-display-0"></span>
-                </div>
-            </div>
+    <section id="more-actions" class="width-80p margin-auto">
+        <h2 class="margin-bottom-1">Mais Ações</h2>
+        <div class="display-flex gap-1 flex-wrap">
+            <a href="./src/views/calculadora/index.html" class="action-box border-radius-10 padding-2 color-white bg-primary text-center">
+                <span>Calculadora de Dividendos</span>
+            </a>
+            <a href="#reports" class="action-box border-radius-10 padding-2 color-white bg-secondary text-center">
+                <span>Relatórios</span>
+            </a>
+            <a href="#settings" class="action-box border-radius-10 padding-2 color-white bg-tertiary text-center">
+                <span>Configurações</span>
+            </a>
         </div>
-        <div id="final-report" class="margin-top-1"></div>
-        <button id="calculateAll" class="margin-top-1">Calcular Todos</button>
     </section>
-
-    <div class="info-card margin-top-2">
-        <h3>Dicas de Investimento</h3>
-        <ul>
-            <li>Diversifique seus investimentos em diferentes tipos de FIIs</li>
-            <li>Analise o histórico de dividendos antes de investir</li>
-            <li>Considere a liquidez do fundo</li>
-        </ul>
-    </div>
-
-    <div class="info-card">
-        <h3>Glossário</h3>
-        <dl>
-            <dt class="glossary-term">Dividend Yield</dt>
-            <dd>Percentual de rendimento dos dividendos em relação ao valor da cota</dd>
-            <dt class="glossary-term">Liquidez</dt>
-            <dd>Facilidade de comprar ou vender as cotas do fundo</dd>
-        </dl>
-    </div>
 
     <footer class="width-80p margin-auto padding-2 border-top margin-top-3">
         <div class="display-flex flex-justify-between flex-align-center flex-wrap">
