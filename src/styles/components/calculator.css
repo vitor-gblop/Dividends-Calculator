@@ -1,11 +1,8 @@
 
-/* 
-.input-field 
-{
-    flex-grow: 1;
-    flex-basis: 200px;
-} 
-*/
+.input-field:hover .tooltip {
+    display: block;
+}
+
 
 #calculator .calculator-container
 {
