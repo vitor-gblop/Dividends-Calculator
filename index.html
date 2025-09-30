@@ -41,17 +41,17 @@
     </main>
 
     <modal id="modal-template" class="modal absolute display-none">
-        <div class="form-container margin-auto border-radius-10 padding-2 color-white">
+        <form  class="form-container margin-auto border-radius-10 padding-2 color-white">
             <h2>Adicionar Nova FII</h2> <br>
             <label for="sigla">Sigla</label> <br>
-            <input type="text" id="input-sigla" name="sigla" id="modal-input-sigla" placeholder="Sigla do Fundo Imobiliario" class="input-field"> <br>
+            <input type="text" id="input-sigla" name="sigla" id="modal-input-sigla" placeholder="Sigla do Fundo Imobiliario" class="input-field" required> <br>
 
             <label for="value">Valor</label> <br>
-            <input type="number" id="input-value" name="value" id="modal-input-value" placeholder="Valor do Fundo Imobiliario" class="input-field">
+            <input type="text" id="input-value" name="value" id="modal-input-value" placeholder="Valor do Fundo Imobiliario" class="input-field" required>
 
-            <button id="modal-salvar-button" class="btn" onclick="handleSave()">Salvar</button>
+            <button type="submit" id="modal-salvar-button" class="btn" onsubmit="handleSave()">Salvar</button>
             <button id="modal-cancel-button" class="btn" onclick="closeModal()">Cancelar</button>
-        </div>
+        </form>
     </modal>
     
     <br>
