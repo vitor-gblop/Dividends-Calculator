@@ -3,9 +3,9 @@
 {
     margin-bottom: 1em;
 }
-#fii-list-investiment span
+#sigla-name-container
 {
-    width: max-content;
+    height: 2em;
 }
 #fii-sigla
 {
@@ -17,8 +17,7 @@
 }
 #fii-name
 {
-    font-size: medium;
-
+    font-size: small;
     color: darkslategray;
 }
 #fii-value
