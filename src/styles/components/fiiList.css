@@ -1,4 +1,12 @@
 
+#fii-list-investiment
+{
+    margin-bottom: 1em;
+}
+#fii-list-investiment span
+{
+    width: max-content;
+}
 #fii-sigla
 {
     background-color: black;
@@ -16,4 +24,8 @@
 #fii-value
 {
     font-size: larger;
+}
+#fii-gain
+{
+    word-break: keep-all;
 }
