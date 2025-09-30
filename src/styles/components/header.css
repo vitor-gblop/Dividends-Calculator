@@ -11,13 +11,8 @@ body header
     gap: 3%;
     
     /* background-color: var(--header-dark-charcoal); */
-<<<<<<< HEAD:styles/components/header.css
-    background-color: #007bff;
-    backdrop-filter: blur(5px);
-=======
     background-color: #1492f8c4;
     backdrop-filter: blur(4px);
->>>>>>> 157d08122dab25c6ffd1dc4a4b31d62d8852e847:src/styles/components/header.css
 
     border-radius: 15px;
     z-index: 5;
