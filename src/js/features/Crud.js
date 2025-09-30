@@ -39,6 +39,11 @@ async function handleSave()
     localStorage.setItem(sigla, JSON.stringify(info));
 }
 
+function handleDelete()
+{
+    
+}
+
 async function handleGetRequisition(sigla)
 {
     try {
@@ -56,3 +61,4 @@ async function handleGetRequisition(sigla)
         console.error("Error during fetch:", error);
     }
 }
+
