@@ -12,19 +12,14 @@
     background-color: rgba(128, 128, 128, 0.174);
     border-radius: 12px;
     /* border: 0.7px solid black; */
-}
+}    
 
 #calculator .calculator-container .input-field
 {
     width: 100%;
-}
-#calculator .calculator-container input
-{
-    width: 100%;
-    padding: 10px 0px 10px 2px;
-    margin: 0;
-    border: 0.7px solid gray;
-    border-radius: 10px;   
+}    
+.input-field {
+    position: relative;
 }
 
 
@@ -32,7 +27,7 @@
     border: 1px solid #ddd;
     margin-bottom: 1rem;
     border-radius: 4px;
-}
+}    
 
 #addCalculator, #calculateAll {
     padding: 0.5rem 1rem;
@@ -41,16 +36,33 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
-}
+}    
 
 #calculateAll 
 {
     background-color: #28a745;
-}
+}    
 
 #final-report {
     padding: 1rem;
     background-color: #f8f9fa;
     border-radius: 4px;
-}
+}    
 
+.calculator-container {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}    
+
+.calculator-container:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}    
+
+.results {
+    background-color: var(--background-color);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    margin-top: 1rem;
+}
