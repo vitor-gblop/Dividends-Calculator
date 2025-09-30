@@ -4,6 +4,7 @@
 @import url(./utils.css);
 @import url(./components/calculator.css);
 @import url(./components/header.css);
+@import url(./components/fii_list.css);
 
 *{
     margin: 0;

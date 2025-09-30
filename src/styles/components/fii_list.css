@@ -1,0 +1,19 @@
+
+#fii-sigla
+{
+    background-color: black;
+    padding: 3px;
+    border-radius: 5px;
+
+    color: whitesmoke;
+}
+#fii-name
+{
+    font-size: medium;
+
+    color: darkslategray;
+}
+#fii-value
+{
+    font-size: larger;
+}
