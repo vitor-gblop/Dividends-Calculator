@@ -6,6 +6,7 @@
     <title>Dividends</title>
 
     <link rel="stylesheet" href="./src/styles/main.css">
+    <script src="./src/js/env/env.js"></script>
 </head>
 <body id="home" class="height-100p">
     <header class="
@@ -31,23 +32,38 @@
     </section>
 
     <main id="fii-list" class="width-80p margin-auto padding-top-1">
-        <div id="fii-list-investiment" class="display-flex flex-justify-between"> <!--Objeto-->
-            <div id="sigla-name-container">
-                <span id="fii-sigla">MXRF11</span> <br>
-                <span id="fii-name">FI nas Cadeias Prod Ag Riza Agro FIAGRO Imob - Un</span> |
+        <div id="fii-list-container">
+            
+            <div id="fii-list-investiment" class="display-flex flex-justify-between"> <!--Objeto-->
+                <div id="sigla-name-container">
+                    <span id="fii-sigla">MXRF11</span> <br>
+                    <span id="fii-name">FI nas Cadeias Prod Ag Riza Agro FIAGRO Imob - Un</span>
+                </div>
+                <span id="fii-value">9.80 R$</span>
+                <span id="fii-gain">0.0 R$</span>
+
             </div>
-            <span id="fii-value">9.80 R$</span>
+            
         </div>
-        
-        <div id="fii-list-investiment" class="display-flex flex-justify-between"> <!--Objeto-->
-            <div id="sigla-name-container">
-                <span id="fii-sigla">MXRF11</span> <br>
-                <span id="fii-name">FI nas Cadeias Prod Ag Riza Agro FIAGRO Imob - Un</span> |
-            </div>
-            <span id="fii-value">9.80 R$</span>
-        </div>
+        <button class="btn" onclick="openModal()">Nova FII</button>
     </main>
+
+    <modal id="modal-template" class="modal absolute display-none">
+        <div class="form-container margin-auto border-radius-10 padding-2 color-white">
+            <h2>Adicionar Nova FII</h2> <br>
+            <label for="sigla">Sigla</label> <br>
+            <input type="text" id="input-sigla" name="sigla" id="modal-input-sigla" placeholder="Sigla do Fundo Imobiliario" class="input-field"> <br>
+
+            <label for="value">Valor</label> <br>
+            <input type="number" id="input-value" name="value" id="modal-input-value" placeholder="Valor do Fundo Imobiliario" class="input-field">
+
+            <button id="modal-salvar-button" class="btn" onclick="handleSave()">Salvar</button>
+            <button id="modal-cancel-button" class="btn" onclick="closeModal()">Cancelar</button>
+        </div>
+    </modal>
     
+    <br>
+    <hr class="width-80p margin-auto">
     <br>
 
     <section class="width-80p margin-auto">
@@ -59,6 +75,10 @@
             <span id="author"></span>
         </div>
     </section>
+
+    <br>
+    <hr class="width-80p margin-auto">
+    <br>
 
     <section id="about" class="width-80p margin-auto">
         <h2>Sobre</h2>
@@ -79,6 +99,10 @@
     </section>
 
     <br>
+    <hr class="width-80p margin-auto">
+    <br>
+
+
 
     <section id="calculator" class="width-80p margin-auto">
         <h2>Calculadora de fundo imobiliario</h2>
@@ -91,11 +115,11 @@
             <!-- Original calculator will be cloned and new ones added here -->
             <div id="calculator-container-0" class="calculator-container calculator-instance padding-2 "> <!--Objeto-->
                 <div class="input-wrapper display-flex flex-wrap gap-1">
-                    <div class="input-field"> 
+                    <!-- <div class="input-field"> 
                         <span>Código do FII</span>
                         <input type="text" placeholder="Ex: XPLG11" class="fii-code">
                         <div class="tooltip">Digite o código do FII na B3</div>
-                    </div>
+                    </div> -->
                     <div class="input-field">
                         <span>Valor do ativo</span>
                         <input id="preco_ativo-0" type="number" value="9.50" class="preco_ativo" name="preco_ativo" placeholder="Valor do ativo">
@@ -117,7 +141,7 @@
                     <button class="btn btn-secondary" onclick="limparCampos(0)">Limpar Campos</button>
                     <button class="btn btn-primary" onclick="calcularRendimento(0)">Calcular</button>
                 </div>
-                <div id="item-report" class="display-flex flex-direction-column results">
+                <div id="item-report-0" class="item-report display-flex flex-direction-column results">
                     <span id="valor-total-display-0"></span>
                     <span id="dividendos-totais-display-0"></span>
                     <span id="total-patrimony-display-0"></span>
@@ -162,6 +186,8 @@
         </div>
     </footer>
 
-    <script src="./src/js/features/fii_calculator.js"></script>
+    <script src="./src/js/features/FiiCalculator.js"></script>
+    <script src="./src/js/features/Modal.js"></script>
+    <script src="./src/js/features/Crud.js"></script>
 </body>
 </html>
