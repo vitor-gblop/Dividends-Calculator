@@ -6,18 +6,17 @@ function listItensSaved()
     
     let d = {...localStorage}
     
-    for(const itemKey in d)
+    for(const item in d)
     {
-        if (localStorage.hasOwnProperty(itemKey)) 
+        if (localStorage.hasOwnProperty(item)) 
         {
-            const itemData = JSON.parse(localStorage.getItem(itemKey));
+            const itemData = JSON.parse(localStorage.getItem(item));
             const newElement = createElement(itemData);
 
             fiiContainer.appendChild(newElement);
         }
     }
 }
-
 
 const createElement = (itemData) => {
     const investmentDiv = document.createElement('div'); //  cria uma div fii-list-investiment // 
@@ -55,4 +54,26 @@ const createElement = (itemData) => {
     investmentDiv.appendChild(gainSpan);
 
     return investmentDiv;
+}
+
+const createChoiceOfElements = () => {
+    const selectElement = document.getElementById('select-sigla');
+    selectElement.innerHTML = ''; // Clear previous options
+
+    let d = {...localStorage}
+    
+    for (item in d) 
+    {
+        const itemData = JSON.parse(localStorage.getItem(item));
+        console.log(itemData);
+        
+        
+        if (itemData && itemData.sigla) {
+            const option = document.createElement('option');
+            option.value = itemData.sigla;
+            option.textContent = itemData.sigla;
+
+            selectElement.appendChild(option);
+        }
+    }
 }
