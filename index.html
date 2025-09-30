@@ -32,17 +32,21 @@
     </section>
 
     <main id="fii-list" class="width-80p margin-auto padding-top-1">
+        <h2>Suas FIIs</h2>
+        <br>
         <div id="fii-list-container">
             
           
             
         </div>
-        <button class="btn" onclick="openModal()">Nova FII</button>
+        <button class="btn" onclick="openModal('modal-template-save')">Nova FII</button>
+        <button class="btn" onclick="openModal('modal-template-delete'); createChoiceOfElements();">Remover FII</button>
     </main>
 
-    <modal id="modal-template" class="modal absolute display-none">
+    <modal id="modal-template-save" class="modal absolute display-none">
         <form  class="form-container margin-auto border-radius-10 padding-2 color-white">
-            <h2>Adicionar Nova FII</h2> <br>
+            <h2>Adicionar Nova FII</h2> 
+            <br>
             <label for="sigla">Sigla</label> <br>
             <input type="text" id="input-sigla" name="sigla" id="modal-input-sigla" placeholder="Sigla do Fundo Imobiliario" class="input-field" required> <br>
 
@@ -50,7 +54,23 @@
             <input type="text" id="input-value" name="value" id="modal-input-value" placeholder="Valor do Fundo Imobiliario" class="input-field" required>
 
             <button type="submit" id="modal-salvar-button" class="btn" onsubmit="handleSave()">Salvar</button>
-            <button id="modal-cancel-button" class="btn" onclick="closeModal()">Cancelar</button>
+            <button id="modal-cancel-button" class="btn" onclick="closeModal('modal-template-save')">Cancelar</button>
+        </form>
+    </modal>
+    
+    <modal id="modal-template-delete" class="modal absolute display-none">
+        <form  class="form-container margin-auto border-radius-10 padding-2 color-white">
+            <h2>Remover uma FII</h2> 
+            <br>
+            <label for="sigla">Sigla</label> <br>
+            <select name="" id="select-sigla">
+                
+            </select>
+            <option value="">vlkmdfkvm</option>
+            <br>
+
+            <button type="submit" id="modal-delete-button" class="btn" onsubmit="handleDelete()">Deletar</button>
+            <button id="modal-cancel-button" class="btn" onclick="closeModal('modal-template-delete')">Cancelar</button>
         </form>
     </modal>
     
