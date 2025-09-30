@@ -31,10 +31,6 @@ select
     border-radius: 10px;
     outline: none;
 }
-option
-{
-    position: relative;
-}
 
 .tooltip {
     position: absolute;
