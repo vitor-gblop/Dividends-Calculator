@@ -1,0 +1,33 @@
+/* 
+.news-card:first-child
+{
+    max-width: 100%;
+}
+
+#secondary-container .news-card
+{
+    max-width: 30%;
+}
+
+.news-card img
+{
+    width: 100px;
+}
+
+.news-card h3 
+{
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.news-card p 
+{
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.news-card span 
+{
+    font-size: 0.875rem;
+    color: var(--);
+} */
