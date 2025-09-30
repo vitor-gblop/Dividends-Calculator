@@ -5,6 +5,7 @@
 @import url(./components/calculator.css);
 @import url(./components/header.css);
 @import url(./components/fiiList.css);
+@import url(./components/modals.css);
 
 *{
     margin: 0;
@@ -19,7 +20,21 @@ input
     border: 0.7px solid gray;
     border-radius: 10px;   
 }
+select
+{
+    width: 100%;
+    padding: 10px 10px;
 
+    margin: 5px 5px;
+
+    border: none;
+    border-radius: 10px;
+    outline: none;
+}
+option
+{
+    position: relative;
+}
 
 .tooltip {
     position: absolute;
@@ -76,26 +91,4 @@ input
 .glossary-term {
     cursor: help;
     border-bottom: 1px dotted var(--primary-color);
-}
-
-
-.modal
-{
-    top: 0;
-    bottom: 0;
-
-    width: 100vw;
-    height: 100vh;
-
-    /* display: flex; */
-    justify-content: center;
-
-    position: fixed;
-    z-index: 5;
-
-    background: rgba(128, 128, 128, 0.377);
-}
-.form-container
-{
-    background-color: #1492f8;
 }
