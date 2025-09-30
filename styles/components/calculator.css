@@ -2,7 +2,7 @@
 .input-field 
 {
     flex-grow: 1;
-    flex-basis: 200px;
+    flex-basis: 215px;
 }
 
 #calculator #calculator-container
@@ -11,11 +11,39 @@
     border-radius: 12px;
     /* border: 0.7px solid black; */
 }
-#calculator #calculator-container input[type="number"]
+#calculator .calculator-container input[type="number"]
 {
-    width: 100%;
+    max-width: 300px;
     padding: 10px;
 
     border: 0.7px solid gray;
     border-radius: 15px;   
 }
+
+
+.calculator-instance {
+    border: 1px solid #ddd;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+#addCalculator, #calculateAll {
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#calculateAll 
+{
+    background-color: #28a745;
+}
+
+#final-report {
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
