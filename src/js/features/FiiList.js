@@ -8,7 +8,11 @@ function listItensSaved()
     
     for(const item in d)
     {
-        if (localStorage.hasOwnProperty(item)) 
+        if (
+            localStorage.hasOwnProperty(item) 
+            && item != "userData"
+            && item != "currentUser"    
+    ) 
         {
             const itemData = JSON.parse(localStorage.getItem(item));
             const newElement = createElement(itemData);
@@ -77,3 +81,4 @@ const createChoiceOfElements = () => {
         }
     }
 }
+
