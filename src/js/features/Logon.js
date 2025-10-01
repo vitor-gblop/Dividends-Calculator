@@ -1,5 +1,3 @@
-const { use } = require("react");
-
 function hide(hideid, showid)
 {
     let x = document.getElementById(hideid);
@@ -11,26 +9,66 @@ function hide(hideid, showid)
 
 function login()
 {
-    let user_data = localStorage.getItem("userData");
-    if (!user_data)
-    {
-        localStorage.setItem("userData", "{}");
-    }
-
     let usuario = document.getElementById("input-usuario").value;
     let senha = document.getElementById("input-senha").value;
 
     // Get user data from localStorage
-    let userData = JSON.parse(localStorage.getItem("userData"));
+    let userData = handleGetUserData();
 
+
+    // console.log(userData[usuario].senha);
+    
+    
     // Simple validation: check if user exists and password matches
-    if (userData[usuario] && userData[usuario] === senha) {
-        // Login successful, redirect or hide login
-        document.getElementById("wrong-data-label").style.display = "none";
-        // Example: hide login, show calculator (adjust as needed)
-        hide('login', 'calculadora');
-    } else {
-        // Show error label
-        document.getElementById("wrong-data-label").style.display = "block";
+    if (userData[usuario])
+    {
+        if (userData[usuario].senha === senha) 
+        {
+            currentUser = { "usuario": userData[usuario].usuario, "senha": userData[usuario].senha }
+            localStorage.setItem("currentUser", JSON.stringify(currentUser))
+            
+            console.log("deu certo");
+            window.location.href ="/";
+        } 
+        else {
+            // Show error label
+            document.getElementById("wrong-data-label").style.display = "block";
+        }
+    }
+    else
+    {
+        console.log("não cadastrado");
+        document.getElementById("missing-user-label").style.display = "block";
+    }
+}
+
+function signin()
+{
+    let usuario = document.getElementById("input-usuario-sign").value;
+    let senha = document.getElementById("input-senha-sign").value;
+
+    // console.log(usuario.length);
+    if (usuario.length >= 3 && senha.length >= 3) 
+    {
+        if (usuario != "" && senha != "")
+        {
+            user = {"usuario": usuario, "senha": senha};
+            handleSaveUser(user);
+        }
+    }
+    else {
+
+    }
+}
+
+function signOut()
+{
+    localStorage.setItem("currentUser", "");
+}
+
+const loginVerification = () => {
+    if (localStorage.getItem("currentUser") == "")
+    {
+        window.location.href = "/src/views/logon/index.html";
     }
 }
