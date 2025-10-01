@@ -23,7 +23,7 @@
     </header>
 
     <br>
-    <section id="interest-investiments" class="width-80p margin-auto padding-top-2">
+    <section id="my-investiments" class="width-80p margin-auto padding-top-2">
         <div class="display-flex gap-1">
             <div id="top-label-investiment">MXRF11</div>
             <div id="top-label-investiment">MXRF11</div>
@@ -36,33 +36,32 @@
         <br>
         <div id="fii-list-container">
             
-          
-            
         </div>
+
         <button class="btn" onclick="openModal('modal-template-save')">Nova FII</button>
         <button class="btn" onclick="openModal('modal-template-delete'); createChoiceOfElements();">Remover FII</button>
     </main>
 
     <modal id="modal-template-save" class="modal absolute display-none">
-        <form  class="form-container margin-auto border-radius-10 padding-2 color-white">
+        <div  class="form-container margin-auto border-radius-10 padding-2 color-white">
             <h2>Adicionar Nova FII</h2> 
             <br>
-            <label for="sigla">Sigla</label> <br>
+            <span for="sigla">Sigla</span> <br>
             <input type="text" id="input-sigla" name="sigla" id="modal-input-sigla" placeholder="Sigla do Fundo Imobiliario" class="input-field" required> <br>
 
-            <label for="value">Valor</label> <br>
+            <span for="value">Valor</span> <br>
             <input type="text" id="input-value" name="value" id="modal-input-value" placeholder="Valor do Fundo Imobiliario" class="input-field" required>
 
-            <button type="submit" id="modal-salvar-button" class="btn" onsubmit="handleSave()">Salvar</button>
+            <button type="submit" id="modal-salvar-button" class="btn" onclick="handleSave()">Salvar</button>
             <button id="modal-cancel-button" class="btn" onclick="closeModal('modal-template-save')">Cancelar</button>
-        </form>
+        </div>
     </modal>
     
     <modal id="modal-template-delete" class="modal absolute display-none">
-        <form  class="form-container margin-auto border-radius-10 padding-2 color-white">
+        <div  class="form-container margin-auto border-radius-10 padding-2 color-white">
             <h2>Remover uma FII</h2> 
             <br>
-            <label for="sigla">Sigla</label> <br>
+            <span for="sigla">Sigla</span> <br>
             <summary id="select-sigla">
 
             </summary>
@@ -72,7 +71,7 @@
 
             <button type="submit" id="modal-delete-button" class="btn" onsubmit="handleDelete()">Deletar</button>
             <button id="modal-cancel-button" class="btn" onclick="closeModal('modal-template-delete')">Cancelar</button>
-        </form>
+        </div>
     </modal>
     
     <br>
@@ -125,7 +124,7 @@
             <a href="#reports" class="action-box border-radius-10 padding-2 color-white bg-secondary text-center">
                 <span>Relatórios</span>
             </a>
-            <a href="#settings" class="action-box border-radius-10 padding-2 color-white bg-tertiary text-center">
+            <a href="#settings" class="action-box border-radius-10 padding-2 color-white bg-tertiary text-center" onclick="signOut()">
                 <span>Configurações</span>
             </a>
         </div>
@@ -146,9 +145,9 @@
         </div>
     </footer>
 
-    <script src="./src/js/features/FiiCalculator.js"></script>
     <script src="./src/js/features/FiiList.js"></script>
     <script src="./src/js/features/Modal.js"></script>
+    <script src="./src/js/features/Logon.js"></script>
     <script src="./src/js/features/Crud.js"></script>
     <script src="./src/js/main.js"></script>
 </body>
