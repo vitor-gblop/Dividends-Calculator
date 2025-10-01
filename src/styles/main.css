@@ -7,6 +7,7 @@
 @import url(./components/fiiList.css);
 @import url(./components/modals.css);
 @import url(./components/news.css);
+@import url(./components/login.css);
 
 *{
     margin: 0;
