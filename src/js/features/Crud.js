@@ -38,10 +38,45 @@ async function handleSave()
 
     localStorage.setItem(sigla, JSON.stringify(info));
 }
+function handleSaveUser(user)
+{
+    let userData = handleGetUserData();
+    console.log(userData);
+    
+    userData[user.usuario] = user;
+    console.log(userData);
+    
+
+    localStorage.setItem("userData", JSON.stringify(userData));
+    return true;
+}
 
 function handleDelete()
 {
     
+}
+
+function handleUpdate()
+{
+    
+}
+
+function handleGetInvestiments()
+{
+
+}
+function handleGetUserData()
+{
+    // Get user data from localStorage
+    let userData = JSON.parse(localStorage.getItem("userData"));
+    console.log(userData);
+    
+    if (!userData)
+    {
+        localStorage.setItem("userData", "{}");
+    }
+
+    return userData;
 }
 
 async function handleGetRequisition(sigla)
@@ -61,4 +96,3 @@ async function handleGetRequisition(sigla)
         console.error("Error during fetch:", error);
     }
 }
-
