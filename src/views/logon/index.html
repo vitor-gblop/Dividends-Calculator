@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dividends</title>
+
+    <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body id="home" class="height-100p">
+
+    <br>
+    <section id="login" class="width-80p margin-auto">
+        
+        <form id="form-login">
+            <h2>Login</h2>
+            <input type="text" name="usuario" id="input-usuario" placeholder="usuario" class="margin-bottom-1" required>
+            <input type="text" name="senha" id="input-senha" placeholder="senha" class="margin-bottom-1" required>
+
+            <label id="wrong-data-label" style="color: rgb(105, 0, 0);" class="display-none">Usuario ou senha incorretos</label> 
+            <br>
+            <button class="btn btn-secondary" type="submit" onclick="login()">Entrar</button>
+            <button class="btn btn-primary" type="submit" onclick="hide('login','signin')">Cadastrar</button>
+        </form>
+    </section>
+    
+    <br>
+    <section id="signin" class="width-80p margin-auto display-none">
+        
+        <form id="form-login">
+            <h2>Signin</h2>
+            <input type="text" name="usuario" id="input-usuario" placeholder="usuario" class="margin-bottom-1" required>
+            <input type="text" name="senha" id="input-senha" placeholder="senha" class="margin-bottom-1" required>
+
+            <br>
+            <button class="btn btn-secondary" type="submit" onclick="signin()">Cadastrar</button>
+            <button class="btn btn-primary" onclick="hide('signin','login')">Entrar</button>
+        </form>
+    </section>
+
+    <script src="../../js/features/Logon.js"></script>
+</body>
+</html>
