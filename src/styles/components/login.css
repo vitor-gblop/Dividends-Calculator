@@ -2,7 +2,9 @@
 
 #form-login
 {
+    color: white;
+    
     padding: 2em;
-    background-color: gray;
+    background-color: #1492f8;
     border-radius: 12px;
 }
