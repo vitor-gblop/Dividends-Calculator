@@ -95,6 +95,7 @@ select
     font-size: medium;
     flex-grow: 1;
 }
+
 .bg-primary
 {
     background-color: brown;
