@@ -12,17 +12,18 @@ function listItensSaved()
             localStorage.hasOwnProperty(item) 
             && item != "userData"
             && item != "currentUser"    
+            && item != "interests"    
     ) 
         {
             const itemData = JSON.parse(localStorage.getItem(item));
-            const newElement = createElement(itemData);
+            const newElement = fiiCreateElement(itemData);
 
             fiiContainer.appendChild(newElement);
         }
     }
 }
 
-const createElement = (itemData) => {
+const fiiCreateElement = (itemData) => {
     const investmentDiv = document.createElement('div'); //  cria uma div fii-list-investiment // 
 
     // define os atributos // 
@@ -48,6 +49,10 @@ const createElement = (itemData) => {
     valueSpan.id = 'fii-value';
     // valueSpan.textContent = `${itemData.lastCloseValue.toFixed(2)} R$`;
     valueSpan.textContent = `${itemData.value} R$`;
+    
+    const quantitySpan = document.createElement('span');
+    quantitySpan.id = 'fii-quantity';
+    quantitySpan.textContent = `${itemData.quantity}`;
 
     const gainSpan = document.createElement('span');
     gainSpan.id = 'fii-gain';
@@ -55,6 +60,7 @@ const createElement = (itemData) => {
 
     investmentDiv.appendChild(siglaNameContainer);
     investmentDiv.appendChild(valueSpan);
+    investmentDiv.appendChild(quantitySpan);
     investmentDiv.appendChild(gainSpan);
 
     return investmentDiv;
@@ -82,3 +88,52 @@ const createChoiceOfElements = () => {
     }
 }
 
+function listInterests()
+{
+    const interestsContainer = document.querySelector("#interest-investiments .interests-container");
+    interestsContainer.innerHTML = '';
+
+    morePopular = [
+        "MXRF11",
+        "VGIA11",
+        "RZAG11",
+        "GARE11",
+        "HGLG11"
+    ];
+    let interests = handleGetInterests();
+
+    handleClearInterests();
+    const iterator = new Set();
+    for (let index = 0; index < 4; index++) 
+    {
+        let i = Math.floor(Math.random() * (morePopular.length - 1));
+
+        if(!iterator.has(i))
+        {
+            iterator.add(i);
+
+            console.log(iterator);
+            handleSetInterest(morePopular[i])
+        }
+        else
+        {
+            index -= 1;
+            continue
+        }
+
+    }
+
+    interests = handleGetInterests();
+    for (let i in interests)
+    {
+        const newElement = interestsCreateElement(i);
+        interestsContainer.appendChild(newElement);
+    }
+}
+
+const interestsCreateElement = (sigla) => {
+    const interestDiv = document.createElement('div');
+    interestDiv.className = 'top-label-investiment';
+    interestDiv.textContent = sigla;
+    return interestDiv;
+}
