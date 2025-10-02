@@ -23,16 +23,23 @@
 //     "earningsPerShare": null
 // }
 
-async function handleSave()
+async function handleSaveFii()
 {
     let sigla = document.getElementById("input-sigla").value;
+    let quantity = document.getElementById("input-quantity").value;
     let value = document.getElementById("input-value").value;
 
     sigla = sigla.toUpperCase();
 
     let data = await handleGetRequisition(sigla);
 
-    let info = {"sigla": data.symbol, "fullName": data.longName, "shortName": data.shortName,"value": value, "lastCloseValue": data.regularMarketPreviousClose}
+    let info = {
+        "quantity": quantity, 
+        "sigla": data.symbol, 
+        "fullName": data.longName, 
+        "shortName": data.shortName,
+        "value": Math.floor((value*quantity)), 
+        "lastCloseValue": data.regularMarketPreviousClose}
     console.log(info);
     
 
@@ -50,10 +57,27 @@ function handleSaveUser(user)
     localStorage.setItem("userData", JSON.stringify(userData));
     return true;
 }
+function handleSetInterest(interest)
+{
+    let i = handleGetInterests();
 
-function handleDelete()
+    i[interest] = interest
+    console.log(i);
+
+    localStorage.setItem("interests", JSON.stringify(i));
+    return true;
+}
+
+function handleDeleteFii()
 {
     
+}
+function handleClearInterests()
+{
+    let i = {}
+    localStorage.setItem("interests", JSON.stringify(i));
+
+    return true;
 }
 
 function handleUpdate()
@@ -77,6 +101,18 @@ function handleGetUserData()
     }
 
     return userData;
+}
+function handleGetInterests()
+{
+    // Get user data from localStorage
+    let interests = JSON.parse(localStorage.getItem("interests"));
+    
+    if (!interests)
+    {
+        localStorage.setItem("interests", "{}");
+    }
+
+    return interests;
 }
 
 async function handleGetRequisition(sigla)
