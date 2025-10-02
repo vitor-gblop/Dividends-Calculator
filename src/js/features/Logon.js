@@ -64,6 +64,7 @@ function signin()
 function signOut()
 {
     localStorage.setItem("currentUser", "");
+    window.location.href = "/src/views/logon/index.html";
 }
 
 const loginVerification = () => {
@@ -71,4 +72,9 @@ const loginVerification = () => {
     {
         window.location.href = "/src/views/logon/index.html";
     }
+    else if(localStorage.getItem("currentUser") == null)
+    {
+        window.location.href = "/src/views/logon/index.html";
+    }
 }
+
