@@ -22,9 +22,26 @@
 }
 #fii-value
 {
-    font-size: larger;
+    font-size: small;
 }
 #fii-gain
 {
+    font-size: small;
     word-break: keep-all;
+}
+#fii-quantity
+{
+    font-size: small;
+}
+
+.top-label-investiment
+{
+    padding: 0.3em;
+    border: 0.7px solid gray;
+    border-radius: 5px;
+}
+.top-label-investiment:active
+{
+    background-color: #1492f8;
+    color: white;
 }
