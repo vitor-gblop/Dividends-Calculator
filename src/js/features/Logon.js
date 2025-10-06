@@ -15,9 +15,7 @@ function login()
     // Get user data from localStorage
     let userData = handleGetUserData();
 
-
     // console.log(userData[usuario].senha);
-    
     
     // Simple validation: check if user exists and password matches
     if (userData[usuario])
@@ -28,7 +26,7 @@ function login()
             localStorage.setItem("currentUser", JSON.stringify(currentUser))
             
             console.log("deu certo");
-            window.location.href ="/";
+            window.location.href ="../../../index.html";
         } 
         else {
             // Show error label
@@ -37,7 +35,7 @@ function login()
     }
     else
     {
-        console.log("não cadastrado");
+        window.alert("não cadastrado");
         document.getElementById("missing-user-label").style.display = "block";
     }
 }
@@ -57,24 +55,24 @@ function signin()
         }
     }
     else {
-
+        window.alert("Usuario ou senha errado")
     }
 }
 
 function signOut()
 {
-    localStorage.setItem("currentUser", "");
-    window.location.href = "/src/views/logon/index.html";
+    localStorage.setItem("currentUser", "{}");
+    window.location.href = "../../views/logon/index.html";
 }
 
-const loginVerification = () => {
-    if (localStorage.getItem("currentUser") == "")
+// na tela inicial se estiver deslogado retorna ao login
+function loginVerification() {
+
+    console.log("verificando");
+    
+    if(localStorage.getItem("currentUser") == "{}")
     {
-        window.location.href = "/src/views/logon/index.html";
-    }
-    else if(localStorage.getItem("currentUser") == null)
-    {
-        window.location.href = "/src/views/logon/index.html";
+        window.location.href = "./src/views/logon/index.html";
     }
 }
 
