@@ -3,23 +3,15 @@ function listItensSaved()
 {
     const fiiContainer = document.getElementById("fii-list-container");
     fiiContainer.innerHTML = ''; // Clear the list before adding new items
+        
+    let fiiData = handleGetInvestiments();
     
-    let d = {...localStorage}
     
-    for(const item in d)
+    for(const item in fiiData)
     {
-        if (
-            localStorage.hasOwnProperty(item) 
-            && item != "userData"
-            && item != "currentUser"    
-            && item != "interests"    
-    ) 
-        {
-            const itemData = JSON.parse(localStorage.getItem(item));
-            const newElement = fiiCreateElement(itemData);
-
-            fiiContainer.appendChild(newElement);
-        }
+        console.log(fiiData[item]);
+        const newElement = fiiCreateElement(fiiData[item]); // passa o objeto com os dados do fii // 
+        fiiContainer.appendChild(newElement); // adiciona o novo elemento na div container //
     }
 }
 
@@ -56,7 +48,19 @@ const fiiCreateElement = (itemData) => {
 
     const gainSpan = document.createElement('span');
     gainSpan.id = 'fii-gain';
-    gainSpan.textContent = '0.0 R$'; // Placeholder for gain
+
+    let gain = ((itemData.lastCloseValue * itemData.quantity) - (itemData.value)).toFixed(2);
+    gainSpan.textContent = gain; // Placeholder for gain
+    if ( gain >= 0 ) {
+        gainSpan.style.color = 'green';
+        gainSpan.textContent = `+${gain} R$`;
+    } else {
+        gainSpan.style.color = 'red';
+        gainSpan.textContent = `${gain} R$`;
+    }
+    
+    // console.log(((itemData.lastCloseValue * itemData.quantity) - (itemData.value)).toFixed(2));
+    
 
     investmentDiv.appendChild(siglaNameContainer);
     investmentDiv.appendChild(valueSpan);
@@ -68,7 +72,7 @@ const fiiCreateElement = (itemData) => {
 
 const createChoiceOfElements = () => {
     const selectElement = document.getElementById('select-sigla');
-    selectElement.innerHTML = ''; // Clear previous options
+    // selectElement.innerHTML = ''; // Clear previous options
 
     let d = {...localStorage}
     
@@ -111,9 +115,8 @@ function listInterests()
         if(!iterator.has(i))
         {
             iterator.add(i);
-
-            console.log(iterator);
             handleSetInterest(morePopular[i])
+            // console.log(iterator);
         }
         else
         {
@@ -135,5 +138,6 @@ const interestsCreateElement = (sigla) => {
     const interestDiv = document.createElement('div');
     interestDiv.className = 'top-label-investiment';
     interestDiv.textContent = sigla;
+
     return interestDiv;
 }
