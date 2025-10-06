@@ -16,9 +16,9 @@
         child-color-white
         ">
             <a href="../../../index.html#home">Home</a>
-            <a href="../../../index.html#about">About</a>
-            <a href="../../../index.html#noticias">News</a>
-            <a href="../../../index.html#calculator">More</a>
+            <a href="../../../index.html#news">Artigos</a>
+            <a href="../../../index.html#about">Sobre</a>
+            <a href="../../../index.html#more-actions">Mais</a>
     </header>
 
     <main id="calculator" class="width-80p margin-auto">
@@ -27,7 +27,6 @@
         <p>Esta calculadora se baseia em valores principalmente estáticos. Em aplicações reais o valor e alterado devido variação no valor do ativo</p>
         <br>
         
-        <button id="addCalculator" class="margin-bottom-1">Adicionar Novo Ativo</button>
         <div id="calculators-wrapper">
             <!-- Original calculator will be cloned and new ones added here -->
             <div id="calculator-container-0" class="calculator-container calculator-instance padding-2 "> <!--Objeto-->
@@ -39,34 +38,28 @@
                     </div> -->
                     <div class="input-field">
                         <span>Valor do ativo</span>
-                        <input id="preco_ativo-0" type="number" value="9.50" class="preco_ativo" name="preco_ativo" placeholder="Valor do ativo">
+                        <input id="preco-ativo-0" class="calc-input" type="number" value="9.50" class="preco-ativo" name="preco-ativo" placeholder="Valor do ativo">
                     </div>
                     <div class="input-field">
                         <span>Quantidade de cotas</span>
-                        <input id="qtd_cotas-0" type="number" value="50" placeholder="Quantidade de cotas">
+                        <input id="qtd-cotas-0" class="calc-input" type="number" value="50" placeholder="Quantidade de cotas">
                     </div>
                     <div class="input-field">
-                        <span>Valor do dividendo</span>
-                        <input id="valor_dividendo-0" type="number" value="0.1" placeholder="Valor do dividendo do ativo">
+                        <span>Valor do dividendo (Pago por mês)</span>
+                        <input id="valor-dividendo-0"   class="calc-input" type="number" value="0.1" placeholder="Valor do dividendo do ativo">
                     </div>
                     <div class="input-field">
                         <span>Tempo de aplicação(em meses)</span>
-                        <input id="tempo_aplicacao-0" type="number" value="12" placeholder="Tempo de aplicação">
+                        <input id="tempo-aplicacao-0" class="calc-input" type="number" value="12" placeholder="Tempo de aplicação">
                     </div>
                 </div>
-                <div class="button-group">
-                    <button class="btn btn-secondary" onclick="limparCampos(0)">Limpar Campos</button>
-                    <button class="btn btn-primary" onclick="calcularRendimento(0)">Calcular</button>
-                </div>
-                <div id="item-report-0" class="item-report display-flex flex-direction-column results">
-                    <span id="valor-total-display-0"></span>
-                    <span id="dividendos-totais-display-0"></span>
-                    <span id="total-patrimony-display-0"></span>
-                </div>
+            </div>
+            <div id="final-report" class="margin-top-1"></div>
+            <div class="button-group">
+                <button class="btn btn-secondary" onclick="limparCampos(0)">Limpar Campos</button>
+                <button class="btn btn-primary" onclick="calc()">Calcular</button>
             </div>
         </div>
-        <div id="final-report" class="margin-top-1"></div>
-        <button id="calculateAll" class="margin-top-1">Calcular Todos</button>
     </main>
 
     <footer class="width-80p margin-auto padding-2 border-top margin-top-3">
@@ -84,6 +77,6 @@
         </div>
     </footer>
 
-    <script src="./src/js/features/FiiCalculator.js"></script>
+    <script src="../../js/features/FiiCalculator.js"></script>
 </body>
 </html>
