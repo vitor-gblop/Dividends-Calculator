@@ -23,7 +23,7 @@
 //     "earningsPerShare": null
 // }
 
-async function handleSaveFii()
+async function handleSaveInvestiment()
 {
     let sigla = document.getElementById("input-sigla").value;
     let quantity = document.getElementById("input-quantity").value;
@@ -33,26 +33,30 @@ async function handleSaveFii()
 
     let data = await handleGetRequisition(sigla);
 
+    let user = localStorage.getItem("currentUser");
+    user = JSON.parse(user);
+    user = user.usuario;
+
     let info = {
         "quantity": quantity, 
         "sigla": data.symbol, 
         "fullName": data.longName, 
         "shortName": data.shortName,
         "value": Math.floor((value*quantity)), 
-        "lastCloseValue": data.regularMarketPreviousClose}
-    console.log(info);
-    
+        "lastCloseValue": data.regularMarketPreviousClose,
+        "currentUser": user,
+    }
+    // console.log(info);
 
     localStorage.setItem(sigla, JSON.stringify(info));
 }
 function handleSaveUser(user)
 {
     let userData = handleGetUserData();
-    console.log(userData);
+    // console.log(userData);
     
     userData[user.usuario] = user;
-    console.log(userData);
-    
+    // console.log(userData);
 
     localStorage.setItem("userData", JSON.stringify(userData));
     return true;
@@ -62,7 +66,7 @@ function handleSetInterest(interest)
     let i = handleGetInterests();
 
     i[interest] = interest
-    console.log(i);
+    // console.log(i);
 
     localStorage.setItem("interests", JSON.stringify(i));
     return true;
@@ -70,7 +74,14 @@ function handleSetInterest(interest)
 
 function handleDeleteFii()
 {
-    
+    let sigla = document.getElementById("select-sigla").value;
+    sigla = sigla.toUpperCase();
+
+    // console.log(sigla);
+
+    localStorage.removeItem(sigla);
+    // window.location.reload();
+    return true;
 }
 function handleClearInterests()
 {
@@ -87,13 +98,46 @@ function handleUpdate()
 
 function handleGetInvestiments()
 {
+    let user = handleGetCurrentUserData();
+    let d = {...localStorage}
+    let returnData = {};
 
+    for(const item in d)
+    {
+        if (
+            localStorage.hasOwnProperty(item) 
+            && item != "userData"
+            && item != "currentUser"    
+            && item != "interests"    ) 
+        {
+            const itemData = JSON.parse(localStorage.getItem(item));
+            if (itemData.currentUser == user.usuario)
+            {
+                // console.log(itemData);
+                returnData[item] = itemData;
+            }
+        }
+    }
+    return returnData;
+}
+function handleGetCurrentUserData()
+{
+    // Get user data from localStorage
+    let userData = JSON.parse(localStorage.getItem("currentUser"));
+    // console.log(userData);
+    
+    if (!userData)
+    {
+        localStorage.setItem("currentUser", "{}");
+    }
+
+    return userData;
 }
 function handleGetUserData()
 {
     // Get user data from localStorage
     let userData = JSON.parse(localStorage.getItem("userData"));
-    console.log(userData);
+    // console.log(userData);
     
     if (!userData)
     {
@@ -125,7 +169,7 @@ async function handleGetRequisition(sigla)
         }
         
         const data = await response.json();
-        console.log(data.results[0]);
+        // console.log(data.results[0]);
         return data.results[0];
 
     } catch (error) {
