@@ -17,9 +17,9 @@
         child-color-white
         ">
             <a href="#home">Home</a>
-            <a href="#news">News</a>
-            <a href="#about">About</a>
-            <a href="#more-actions">More</a>
+            <a href="#news">Artigos</a>
+            <a href="#about">Sobre</a>
+            <a href="#more-actions">Mais</a>
     </header>
 
     <br>
@@ -54,7 +54,7 @@
             <span>Valor de Compra</span> <br>
             <input type="text" id="input-quantity" name="quantity" id="modal-input-quantity" placeholder="Quantidade de ativos" class="input-field" required>
 
-            <button type="submit" id="modal-salvar-button" class="btn" onclick="handleSaveFii()">Salvar</button>
+            <button type="submit" id="modal-salvar-button" class="btn" onclick="handleSaveInvestiment()">Salvar</button>
             <button id="modal-cancel-button" class="btn" onclick="closeModal('modal-template-save')">Cancelar</button>
         </div>
     </modal>
@@ -64,10 +64,12 @@
             <h2>Remover uma FII</h2> 
             <br>
             <span for="sigla">Sigla</span> <br>
-            
+            <select name="select-sigla" id="select-sigla">
+                <option value="none">NENHUM</option>
+            </select>
             <br>
 
-            <button type="submit" id="modal-delete-button" class="btn" onsubmit="handleDeleteFii()">Deletar</button>
+            <button type="submit" id="modal-delete-button" class="btn" onclick="handleDeleteFii()">Deletar</button>
             <button id="modal-cancel-button" class="btn" onclick="closeModal('modal-template-delete')">Cancelar</button>
         </div>
     </modal>
@@ -79,10 +81,36 @@
     <section id="news" class="width-80p margin-auto">
         <h2>Noticias</h2>
         <br>
-        <div class="news-card">
-            <img src="./src/assets/image.png" alt="">
-            <p id="resume">Resumo</p>
-            <span id="author">lopes, vitor</span>
+        <div id="news-card-container">
+            <div class="news-card">
+                <picture>
+                    <img src="./src/assets/image.png" alt="">
+                </picture>
+                <a id="resume">
+                    FIIs de shoppings brilham em 2025: veja retorno de quem investiu R$ 100 mil no setor
+                </a>
+                <span id="author">lopes, vitor</span>
+            </div>
+            
+            <div class="news-card">
+                <picture>
+                    <img src="./src/assets/image.png" alt="">
+                </picture>
+                <a id="resume">
+                    Isenção do IR: como fica a tributação de dividendos para quem não tem alta renda?
+                </a>
+                <span id="author">lopes, vitor</span>
+            </div>
+            
+            <div class="news-card">
+                <picture>
+                    <img src="./src/assets/image.png" alt="">
+                </picture>
+                <a id="resume">
+                    Quanto investir para receber R$ 5 mil por mês em dividendos?
+                </a>
+                <span id="author">lopes, vitor</span>
+            </div>
         </div>
     </section>
 
@@ -93,7 +121,7 @@
     <section id="about" class="width-80p margin-auto">
         <h2>Sobre</h2>
 
-        <div id="about-container" class="padding-2">
+        <div id="about-container" class="">
             <p>Fundos Imobiliários (FIIs) são uma forma de investimento coletivo em que o dinheiro de diversos investidores é aplicado em ativos do mercado imobiliário. Ao comprar cotas de um FII, o investidor se torna um "condômino", recebendo rendimentos proporcionais aos lucros gerados pelo fundo.</p>
             <br>
             <h3>Como funciona</h3>
@@ -105,7 +133,7 @@
 
                 <li class="margin-bottom-1">Distribuição de lucros: A maior parte do lucro líquido é distribuída periodicamente aos cotistas, geralmente de forma mensal</li>
             </ul>
-            <a class="btn btn-primary" href="./src/views/calculadora/index.html" >Saber Mais</a>
+            <a class="btn btn-primary" href="./src/views/about/index.html" >Saber Mais</a>
         </div>
     </section>
 
