@@ -108,7 +108,8 @@ function handleGetInvestiments()
             localStorage.hasOwnProperty(item) 
             && item != "userData"
             && item != "currentUser"    
-            && item != "interests"    ) 
+            && item != "interests"     
+            && item != "currentTheme"    ) 
         {
             const itemData = JSON.parse(localStorage.getItem(item));
             if (itemData.currentUser == user.usuario)

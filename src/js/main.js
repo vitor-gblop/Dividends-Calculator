@@ -1,11 +1,14 @@
 listItensSaved();
+loginVerification();
+verifyTheme()
 var intervalId = setInterval(
     function() 
     {
-        console.log("oloco");
         
         listItensSaved();
         loginVerification();
+        
+        console.log("oloco");
     }, 2000
 );
 listInterests();

@@ -1,46 +1,104 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="pt-br" class="dark-mode">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dividends</title>
 
-    <link rel="stylesheet" href="../../styles/main.css">
-</head>
-<body id="home" class="height-100vh">
-
-    <br>
+    <link rel="stylesheet" href="../../styles/main.css" />
+  </head>
+  <body id="home" class="height-100p">
+    <div class="margin-top-5"></div>
     <section id="login" class="width-80p margin-auto">
-        
-        <div id="form-login">
-            <h2>Login</h2>
-            <input type="text" name="usuario" id="input-usuario" placeholder="usuario" class="margin-bottom-1" required>
-            <input type="text" name="senha" id="input-senha" placeholder="senha" class="margin-bottom-1" required>
+      <div id="form-login">
+        <h2>Login</h2>
+        <input
+          type="text"
+          name="usuario"
+          id="input-usuario"
+          placeholder="usuario"
+          class="margin-bottom-1"
+          required
+        />
+        <input
+          type="password"
+          name="senha"
+          id="input-senha"
+          placeholder="senha"
+          class="margin-bottom-1"
+          required
+        />
 
-            <span id="wrong-data-label" style="color: rgb(105, 0, 0);" class="display-none">Usuario ou senha incorretos</span> 
-            <span id="missing-user-label" style="color: rgb(105, 0, 0);" class="display-none">Usuario não existe</span> 
-            <br>
-            <button class="btn btn-secondary" type="submit" onclick="login()">Entrar</button>
-            <button class="btn btn-primary" type="submit" onclick="hide('login','signin')">Cadastrar</button>
-        </div>
+        <span
+          id="wrong-data-label"
+          style="color: rgb(105, 0, 0)"
+          class="display-none"
+          >Usuario ou senha incorretos</span
+        >
+        <span
+          id="missing-user-label"
+          style="color: rgb(105, 0, 0)"
+          class="display-none"
+          >Usuario não existe</span
+        >
+        <br />
+        <button class="btn btn-secondary" type="submit" onclick="login()">
+          Entrar
+        </button>
+        <button
+          class="btn btn-primary"
+          type="submit"
+          onclick="hide('login','signin')"
+        >
+          Cadastrar
+        </button>
+      </div>
     </section>
-    
-    <section id="signin" class="width-80p margin-auto display-none">
-        
-        <div id="form-login">
-            <h2>Signin</h2>
-            <input type="text" name="usuario" id="input-usuario-sign" placeholder="usuario" class="margin-bottom-1" required>
-            <input type="text" name="senha" id="input-senha-sign" placeholder="senha" class="margin-bottom-1" required>
 
-            <span id="length-error" style="color: rgb(105, 0, 0);" class="display-none">o usuario e a senha devem ter pelo menos 3 caracteres</span> 
-            <span id="empty-error" style="color: rgb(105, 0, 0);" class="display-none">os campos devem estar preenchidos</span>
-            <br>
-            <button class="btn btn-secondary" type="submit" onclick="signin()">Cadastrar</button>
-            <button class="btn btn-primary" onclick="hide('signin','login')">Entrar</button>
-        </div>
+    <section id="signin" class="width-80p margin-auto display-none">
+      <div id="form-login">
+        <h2>Signin</h2>
+        <input
+          type="text"
+          name="usuario"
+          id="input-usuario-sign"
+          placeholder="usuario"
+          class="margin-bottom-1"
+          required
+        />
+        <input
+          type="password"
+          name="senha"
+          id="input-senha-sign"
+          placeholder="senha"
+          class="margin-bottom-1"
+          required
+        />
+
+        <span
+          id="length-error"
+          style="color: rgb(105, 0, 0)"
+          class="display-none"
+          >o usuario e a senha devem ter pelo menos 3 caracteres</span
+        >
+        <span
+          id="empty-error"
+          style="color: rgb(105, 0, 0)"
+          class="display-none"
+          >os campos devem estar preenchidos</span
+        >
+        <br />
+        <button class="btn btn-secondary" type="submit" onclick="signin()">
+          Cadastrar
+        </button>
+      </div>
     </section>
 
     <script src="../../js/features/Crud.js"></script>
     <script src="../../js/features/Logon.js"></script>
-</body>
+    <script src="../../js/features/theme.js"></script>
+    <script>
+      verifyTheme();
+    </script>
+  </body>
 </html>

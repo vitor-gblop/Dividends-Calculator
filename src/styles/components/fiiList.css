@@ -18,7 +18,7 @@
 #fii-name
 {
     font-size: small;
-    color: darkslategray;
+    color: var(--name-fii);
 }
 #fii-value
 {

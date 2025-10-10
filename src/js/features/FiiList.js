@@ -6,9 +6,10 @@ function listItensSaved()
         
     let fiiData = handleGetInvestiments();
     
-    
+    fiiContainer.innerText = "Nenhum Ativo Salvo"
     for(const item in fiiData)
     {
+        fiiContainer.innerText = ""
         console.log(fiiData[item]);
         const newElement = fiiCreateElement(fiiData[item]); // passa o objeto com os dados do fii // 
         fiiContainer.appendChild(newElement); // adiciona o novo elemento na div container //

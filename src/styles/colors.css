@@ -1,6 +1,12 @@
 
 :root
 {
+    --theme-color: white;
+    --name-fii: darkslategray;
+    --link-color: rgb(255, 255, 255);
+    --calc-color: rgb(255, 255, 255);
+    --calc-bg-color: rgb(221, 221, 221);
+
     --bg-color-main: #282828;
     --dark-charcoal: #333333;
     --header-dark-charcoal: #3333335a;
@@ -13,4 +19,25 @@
     --card-background: #ffffff;
     --text-color: #333333;
     --border-radius: 8px;
+}
+
+
+.dark-mode
+{
+    color: whitesmoke;
+    background-color: var(--dark-charcoal);
+    --name-fii: rgb(255, 255, 255);
+    --link-color: rgb(161, 210, 255);
+    --calc-color: rgb(255, 255, 255);
+    --calc-bg-color: #3a3a3a;
+}
+.light-mode
+{
+    color: black;
+    background-color: var(--light-theme-color);
+    --link-color: black;
+    --calc-color: #1d1d1d;
+    --calc-bg-color: rgb(238, 238, 238);
+
+
 }

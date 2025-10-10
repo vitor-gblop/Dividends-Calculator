@@ -1,82 +1,103 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="pt-br" class="dark-mode">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dividends</title>
 
-    <link rel="stylesheet" href="../../styles/main.css">
-</head>
-<body id="home" class="height-100p">
-    <header class="
-        flex-center-items 
-        sticky
-        margin-auto
-        child-links-text-decoration-none
-        child-color-white
-        ">
-            <a href="../../../index.html#home">Home</a>
-            <a href="../../../index.html#news">Artigos</a>
-            <a href="../../../index.html#about">Sobre</a>
-            <a href="../../../index.html#more-actions">Mais</a>
-    </header>
-
+    <link rel="stylesheet" href="../../styles/main.css" />
+  </head>
+  <body id="home" class="height-100p">
+    <div class="margin-top-3"></div>
     <main id="calculator" class="width-80p margin-auto">
-        <h2>Calculadora de fundo imobiliario</h2>
+      <h2>Calculadora de fundo imobiliario</h2>
 
-        <p>Esta calculadora se baseia em valores principalmente estáticos. Em aplicações reais o valor e alterado devido variação no valor do ativo</p>
-        <br>
-        
-        <div id="calculators-wrapper">
-            <!-- Original calculator will be cloned and new ones added here -->
-            <div id="calculator-container-0" class="calculator-container calculator-instance padding-2 "> <!--Objeto-->
-                <div class="input-wrapper display-flex flex-wrap gap-1">
-                    <!-- <div class="input-field"> 
+      <p>
+        Esta calculadora se baseia em valores principalmente estáticos. Em
+        aplicações reais o valor e alterado devido variação no valor do ativo
+      </p>
+      <br />
+
+      <div id="calculators-wrapper">
+        <!-- Original calculator will be cloned and new ones added here -->
+        <div
+          id="calculator-container-0"
+          class="calculator-container calculator-instance padding-2"
+        >
+          <!--Objeto-->
+          <div class="input-wrapper display-flex flex-wrap gap-1">
+            <!-- <div class="input-field"> 
                         <span>Código do FII</span>
                         <input type="text" placeholder="Ex: XPLG11" class="fii-code">
                         <div class="tooltip">Digite o código do FII na B3</div>
                     </div> -->
-                    <div class="input-field">
-                        <span>Valor do ativo</span>
-                        <input id="preco-ativo-0" class="calc-input" type="number" value="9.50" class="preco-ativo" name="preco-ativo" placeholder="Valor do ativo">
-                    </div>
-                    <div class="input-field">
-                        <span>Quantidade de cotas</span>
-                        <input id="qtd-cotas-0" class="calc-input" type="number" value="50" placeholder="Quantidade de cotas">
-                    </div>
-                    <div class="input-field">
-                        <span>Valor do dividendo (Pago por mês)</span>
-                        <input id="valor-dividendo-0"   class="calc-input" type="number" value="0.1" placeholder="Valor do dividendo do ativo">
-                    </div>
-                    <div class="input-field">
-                        <span>Tempo de aplicação(em meses)</span>
-                        <input id="tempo-aplicacao-0" class="calc-input" type="number" value="12" placeholder="Tempo de aplicação">
-                    </div>
-                </div>
+            <div class="input-field">
+              <span>Valor do ativo</span>
+              <input
+                id="preco-ativo-0"
+                class="calc-input"
+                type="number"
+                value="9.50"
+                class="preco-ativo"
+                name="preco-ativo"
+                placeholder="Valor do ativo"
+              />
             </div>
-            <div id="final-report" class="margin-top-1"></div>
-            <div class="button-group">
-                <button class="btn btn-secondary" onclick="limparCampos(0)">Limpar Campos</button>
-                <button class="btn btn-primary" onclick="calc()">Calcular</button>
+            <div class="input-field">
+              <span>Quantidade de cotas</span>
+              <input
+                id="qtd-cotas-0"
+                class="calc-input"
+                type="number"
+                value="50"
+                placeholder="Quantidade de cotas"
+              />
             </div>
+            <div class="input-field">
+              <span>Valor do dividendo (Pago por mês)</span>
+              <input
+                id="valor-dividendo-0"
+                class="calc-input"
+                type="number"
+                value="0.1"
+                placeholder="Valor do dividendo do ativo"
+              />
+            </div>
+            <div class="input-field">
+              <span>Tempo de aplicação(em meses)</span>
+              <input
+                id="tempo-aplicacao-0"
+                class="calc-input"
+                type="number"
+                value="12"
+                placeholder="Tempo de aplicação"
+              />
+            </div>
+          </div>
         </div>
+        <div id="final-report" class="margin-top-1"></div>
+        <div class="button-group">
+          <button class="btn btn-secondary" onclick="limparCampos(0)">
+            Limpar Campos
+          </button>
+          <button class="btn btn-primary" onclick="calc()">Calcular</button>
+        </div>
+      </div>
     </main>
 
-    <footer class="width-80p margin-auto padding-2 border-top margin-top-3">
-        <div class="display-flex flex-justify-between flex-align-center flex-wrap">
-            <span>
-                Redes Sociais: <br>
-                    <a href="">Linkedin</a> <br>
-                    <a href="">GitHub</a> <br><br>
-            </span>
-            <span>
-                Contato: XX XXXXX-XXXX <br>
-                <a href="mailto:seuemail@exemplo.com">seuemail@exemplo.com</a>
-            </span>
-            <span>&copy; 2024 Dividends Calculator</span>
-        </div>
-    </footer>
+    <header
+      class="flex-center-items sticky margin-auto child-links-text-decoration-none child-color-white"
+    >
+      <a href="../../../index.html#home">Home</a>
+      <a href="../../../index.html#news">Artigos</a>
+      <a href="../../../index.html#about">Sobre</a>
+      <a href="../../../index.html#more-actions">Mais</a>
+    </header>
 
     <script src="../../js/features/FiiCalculator.js"></script>
-</body>
+    <script src="../../js/features/theme.js"></script>
+    <script>
+      verifyTheme();
+    </script>
+  </body>
 </html>
