@@ -10,27 +10,27 @@
   <body id="home" class="height-100vh">
     <div class="margin-top-3"></div>
     <main id="reports" class="width-80p margin-auto">
-        <h2 class="">Relatorios</h2>
-        <div id="reports-container">
-            <h3>Fundos Imobiliarios registrados</h3>
-            <div id="div-scope-vision" class="display-flex gap-1">
-                <div>fiis</div>
-                <div>valor de compra</div>
-                <div>valor do ultimo fechamento</div>
-            </div>
-            <h3>Retornos mensais</h3>
-            <div id="div-month-return">retorno mensal</div>
-            <!-- Suggestions for more content -->
-            <h3>Resumo dos Dividendos</h3>
-            <div id="div-dividends-summary">
-                <div>Total recebido: R$ 0,00</div>
-                <div>Projeção anual: R$ 0,00</div>
-            </div>
+      <h2 class="">Relatorios</h2>
+      <div id="reports-container">
+        <h3>Fundos Imobiliarios registrados</h3>
+        <div id="div-scope-vision" class="display-flex gap-1">
+          <div>fiis</div>
+          <div>valor de compra</div>
+          <div>valor do ultimo fechamento</div>
+        </div>
+        <h3>Retornos mensais</h3>
+        <div id="div-month-return">retorno mensal</div>
+        <!-- Suggestions for more content -->
+        <h3>Resumo dos Dividendos</h3>
+        <div id="div-dividends-summary">
+          <div>Total recebido: R$ 0,00</div>
+          <div>Projeção anual: R$ 0,00</div>
+        </div>
 
-            <h3>Gráfico de Retornos</h3>
-            <canvas id="returns-chart" width="400" height="200"></canvas>
+        <h3>Gráfico de Retornos</h3>
+        <canvas id="returns-chart" width="400" height="200"></canvas>
 
-            <!-- <h3>Filtros</h3>
+        <!-- <h3>Filtros</h3>
             <form id="reports-filter-form">
                 <label for="month">Mês:</label>
                 <select id="month" name="month">
@@ -42,7 +42,7 @@
                 <input type="number" id="year" name="year" min="2000" max="2100" value="2024" />
                 <button type="submit">Filtrar</button>
             </form> -->
-        </div>
+      </div>
     </main>
 
     <span class="spacing">
@@ -63,6 +63,12 @@
     <script src="../../js/features/theme.js"></script>
     <script>
       verifyTheme();
+    </script>
+    <script src="../../js/features/reports.js"></script>
+    <script>
+      if (typeof initReports === "function") {
+        initReports();
+      }
     </script>
   </body>
 </html>
