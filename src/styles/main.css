@@ -39,6 +39,11 @@ select
     outline: none;
 }
 
+.spacing
+{
+    color: transparent;
+}
+
 .tooltip {
     position: absolute;
     top: -30px;
