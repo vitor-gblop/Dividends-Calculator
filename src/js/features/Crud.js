@@ -47,7 +47,16 @@ async function handleSaveInvestiment()
         "currentUser": user,
     }
     // console.log(info);
+    let x =""
+    x.indexOf
 
+    // if (data.symbol.indexOf("11") != -1)
+    // {
+    // }
+    // else
+    // {
+    //     window.alert("A sigla informada não é de um FII.");
+    // }
     localStorage.setItem(sigla, JSON.stringify(info));
 }
 function handleSaveUser(user)
