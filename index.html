@@ -1,180 +1,219 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="pt-br" class="dark-mode">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dividends</title>
 
-    <link rel="stylesheet" href="./src/styles/main.css">
     <script src="./src/js/env/env.js"></script>
-</head>
-<body id="home" class="height-100p">
-    <header class="
-        flex-center-items 
-        sticky
-        margin-auto
-        child-links-text-decoration-none
-        child-color-white
-        ">
-            <a href="#home">Home</a>
-            <a href="#news">Artigos</a>
-            <a href="#about">Sobre</a>
-            <a href="#more-actions">Mais</a>
-    </header>
+    <link rel="stylesheet" href="./src/styles/main.css" />
+  </head>
+  <body id="home" class="height-100vh">
+    <br />
+    
+    <div id="logo" class="width-80p margin-auto ">
+      <span style="color: var( --text-color);">investweb</span>
+      <img class="absolute" src="./src/assets/Gemini_Generated_Image_tr9atntr9atntr9a-removebg-preview (1).png" alt="" >
+    </div>
 
-    <br>
-    <section id="interest-investiments" class="width-90p margin-auto padding-top-2">
-        <h3>Em alta</h3>
-        <div class="interests-container display-flex flex-justify-between">
-           
-        </div>
+    <section
+      id="interest-investiments"
+      class="width-80p margin-auto padding-top-2"
+    >
+      <h3>Em alta</h3>
+      <div class="interests-container display-flex flex-justify-between"></div>
     </section>
+    <br />
+    <hr class="width-80p margin-auto" />
 
     <main id="fii-list" class="width-80p margin-auto padding-top-1">
-        <h2>Suas FIIs</h2>
-        <br>
-        <div id="fii-list-container">
-            
-        </div>
+      <h2>Suas FIIs</h2>
+      <br />
+      <div id="fii-list-container"></div>
 
-        <button class="btn bg-secondary color-white" onclick="openModal('modal-template-save')">Adicionar/Atualizar</button>
-        <button class="btn bg-primary color-white" onclick="openModal('modal-template-delete'); createChoiceOfElements();">Remover FII</button>
+      <button
+        class="btn bg-secondary color-white"
+        onclick="openModal('modal-template-save')"
+      >
+        Adicionar/Atualizar
+      </button>
+      <button
+        class="btn bg-primary color-white"
+        onclick="openModal('modal-template-delete'); createChoiceOfElements();"
+      >
+        Remover FII
+      </button>
     </main>
 
     <modal id="modal-template-save" class="modal absolute display-none">
-        <div  class="form-container margin-auto border-radius-10 padding-2 color-white width-80p">
-            <h2>Adicionar Nova FII</h2> 
-            <br>
-            <span>Sigla</span> <br>
-            <input type="text" id="input-sigla" name="sigla" id="modal-input-sigla" placeholder="Sigla do Fundo Imobiliario" class="input-field" required> <br>
+      <div
+        class="form-container margin-auto border-radius-10 padding-2 color-white width-80p"
+      >
+        <h2>Adicionar Nova FII</h2>
+        <br />
+        <span>Sigla</span> <br />
+        <input
+          type="text"
+          id="input-sigla"
+          name="sigla"
+          id="modal-input-sigla"
+          placeholder="Sigla do Fundo Imobiliario"
+          class="input-field"
+          required
+        />
+        <br />
 
-            <span>Valor de Compra</span> <br>
-            <input type="text" id="input-value" name="value" id="modal-input-value" placeholder="Valor No momento da compra" class="input-field" required>
-            
-            <span>Valor de Compra</span> <br>
-            <input type="text" id="input-quantity" name="quantity" id="modal-input-quantity" placeholder="Quantidade de ativos" class="input-field" required>
+        <span>Valor de Compra</span> <br />
+        <input
+          type="text"
+          id="input-value"
+          name="value"
+          id="modal-input-value"
+          placeholder="Valor No momento da compra"
+          class="input-field"
+          required
+        />
 
-            <button type="submit" id="modal-salvar-button" class="btn" onclick="handleSaveInvestiment()">Salvar</button>
-            <button id="modal-cancel-button" class="btn" onclick="closeModal('modal-template-save')">Cancelar</button>
-        </div>
+        <span>Valor de Compra</span> <br />
+        <input
+          type="text"
+          id="input-quantity"
+          name="quantity"
+          id="modal-input-quantity"
+          placeholder="Quantidade de ativos"
+          class="input-field"
+          required
+        />
+
+        <button
+          type="submit"
+          id="modal-salvar-button"
+          class="btn"
+          onclick="handleSaveInvestiment()"
+        >
+          Salvar
+        </button>
+        <button
+          id="modal-cancel-button"
+          class="btn"
+          onclick="closeModal('modal-template-save')"
+        >
+          Cancelar
+        </button>
+      </div>
     </modal>
-    
+
     <modal id="modal-template-delete" class="modal absolute display-none">
-        <div  class="form-container margin-auto border-radius-10 padding-2 color-white width-80p">
-            <h2>Remover uma FII</h2> 
-            <br>
-            <span for="sigla">Sigla</span> <br>
-            <select name="select-sigla" id="select-sigla">
-                <option value="none">NENHUM</option>
-            </select>
-            <br>
+      <div
+        class="form-container margin-auto border-radius-10 padding-2 color-white width-80p"
+      >
+        <h2>Remover uma FII</h2>
+        <br />
+        <span for="sigla">Sigla</span> <br />
+        <select name="select-sigla" id="select-sigla">
+          <option value="none">NENHUM</option>
+        </select>
+        <br />
 
-            <button type="submit" id="modal-delete-button" class="btn" onclick="handleDeleteFii()">Deletar</button>
-            <button id="modal-cancel-button" class="btn" onclick="closeModal('modal-template-delete')">Cancelar</button>
-        </div>
+        <button
+          type="submit"
+          id="modal-delete-button"
+          class="btn"
+          onclick="handleDeleteFii()"
+        >
+          Deletar
+        </button>
+        <button
+          id="modal-cancel-button"
+          class="btn"
+          onclick="closeModal('modal-template-delete')"
+        >
+          Cancelar
+        </button>
+      </div>
     </modal>
-    
-    <br>
-    <hr class="width-80p margin-auto">
-    <br>
 
-    <section id="news" class="width-80p margin-auto">
-        <h2>Noticias</h2>
-        <br>
-        <div id="news-card-container">
-            <div class="news-card">
-                <picture>
-                    <img src="./src/assets/image.png" alt="">
-                </picture>
-                <a id="resume">
-                    FIIs de shoppings brilham em 2025: veja retorno de quem investiu R$ 100 mil no setor
-                </a>
-                <span id="author">lopes, vitor</span>
-            </div>
-            
-            <div class="news-card">
-                <picture>
-                    <img src="./src/assets/image.png" alt="">
-                </picture>
-                <a id="resume">
-                    Isenção do IR: como fica a tributação de dividendos para quem não tem alta renda?
-                </a>
-                <span id="author">lopes, vitor</span>
-            </div>
-            
-            <div class="news-card">
-                <picture>
-                    <img src="./src/assets/image.png" alt="">
-                </picture>
-                <a id="resume">
-                    Quanto investir para receber R$ 5 mil por mês em dividendos?
-                </a>
-                <span id="author">lopes, vitor</span>
-            </div>
-        </div>
-    </section>
+    <br />
+    <hr class="width-80p margin-auto" />
+    <br />
 
-    <br>
-    <hr class="width-80p margin-auto">
-    <br>
+    <!-- <section id="about" class="width-80p margin-auto">
+	  <h2>Sobre</h2>
 
-    <section id="about" class="width-80p margin-auto">
-        <h2>Sobre</h2>
+	  <div id="about-container" class="">
+		<p>
+		  Fundos Imobiliários (FIIs) são uma forma de investimento coletivo em
+		  que o dinheiro de diversos investidores é aplicado em ativos do
+		  mercado imobiliário. <br>
+          Ao comprar cotas de um FII, o investidor se torna
+		  um "condômino", recebendo rendimentos proporcionais aos lucros gerados
+		  pelo fundo.
+		</p>
+		<br />
 
-        <div id="about-container" class="">
-            <p>Fundos Imobiliários (FIIs) são uma forma de investimento coletivo em que o dinheiro de diversos investidores é aplicado em ativos do mercado imobiliário. Ao comprar cotas de um FII, o investidor se torna um "condômino", recebendo rendimentos proporcionais aos lucros gerados pelo fundo.</p>
-            <br>
-            <h3>Como funciona</h3>
-            <ul id="how-work" class="margin-top-1">
-                <li class="margin-bottom-1">Captação de recursos: Uma gestora cria o fundo, divide-o em cotas e as vende na Bolsa de Valores.</li>
-                <li class="margin-bottom-1">Investimento: Com o dinheiro dos cotistas, o fundo investe em empreendimentos imobiliários, como shoppings, edifícios comerciais, hospitais, ou títulos de dívida imobiliária (CRIs, LCIs).</li>
-                
-                <li class="margin-bottom-1">Geração de renda: O fundo obtém lucro com a exploração dos imóveis (aluguéis, arrendamentos) ou com os juros dos títulos que possui.</li>
+		<a class="btn btn-primary" href="./src/views/about/index.html"
+		  >Saber Mais</a
+		>
+	  </div>
+	</section>
 
-                <li class="margin-bottom-1">Distribuição de lucros: A maior parte do lucro líquido é distribuída periodicamente aos cotistas, geralmente de forma mensal</li>
-            </ul>
-            <a class="btn btn-primary" href="./src/views/about/index.html" >Saber Mais</a>
-        </div>
-    </section>
-
-    <br>
-    <hr class="width-80p margin-auto">
-    <br>
+	<br />
+	<hr class="width-80p margin-auto" />
+	<br /> -->
 
     <section id="more-actions" class="width-80p margin-auto">
-        <h2 class="margin-bottom-1">Mais Ações</h2>
-        <div class="display-flex gap-1 flex-wrap">
-            <a href="./src/views/calculadora/index.html" class="action-box border-radius-10 padding-2 color-white bg-primary text-center">
-                <span>Calculadora de Dividendos</span>
-            </a>
-            <a href="#reports" class="action-box border-radius-10 padding-2 color-white bg-secondary text-center">
-                <span>Relatórios</span>
-            </a>
-            <a href="/src/views/settings/index.html" class="action-box border-radius-10 padding-2 color-white bg-tertiary text-center">
-                <span>Configurações</span>
-            </a>
-        </div>
+      <h2 class="margin-bottom-1">Mais Ações</h2>
+      <div class="display-flex gap-1 flex-wrap">
+        <a
+          href="./src/views/calculadora/index.html"
+          class="action-box border-radius-10 padding-2 color-white bg-primary text-center"
+        >
+          <span>Calculadora de Dividendos</span>
+        </a>
+
+        <a
+          href="./src/views/reports/index.html#reports"
+          class="action-box border-radius-10 padding-2 color-white bg-secondary text-center"
+        >
+          <span>Relatórios</span>
+        </a>
+
+        <a
+          href="./src/views/about/index.html"
+          class="action-box border-radius-10 padding-2 color-white bg-tertiary text-center"
+        >
+          <span>Dicas e Artigos</span>
+        </a>
+
+        <a
+          href="./src/views/settings/index.html"
+          class="action-box border-radius-10 padding-2 color-white bg-tertiary text-center"
+        >
+          <span>Configurações</span>
+        </a>
+      </div>
     </section>
 
-    <footer class="width-80p margin-auto padding-2 border-top margin-top-3">
-        <div class="display-flex flex-justify-between flex-align-center flex-wrap">
-            <span>
-                Redes Sociais: <br>
-                    <a href="">Linkedin</a> <br>
-                    <a href="">GitHub</a> <br><br>
-            </span>
-            <span>
-                Contato: XX XXXXX-XXXX <br>
-                <a href="mailto:seuemail@exemplo.com">seuemail@exemplo.com</a>
-            </span>
-            <span>&copy; 2024 Dividends Calculator</span>
-        </div>
-    </footer>
+    <span class="spacing">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste facilis vel
+      non mollitia, voluptatibus recusandae dicta hic quae? Voluptatibus ipsam
+      voluptatum veniam magnam voluptates velit facilis dolorem qui quo
+      aspernatur.
+    </span>
+
+    <header
+      class="flex-center-items margin-auto child-links-text-decoration-none child-color-white"
+    >
+      <a href="#home" id="active">Home</a>
+      <a href="src/views/reports/index.html">Relatorios</a>
+      <a href="#more-actions">Mais</a>
+    </header>
 
     <script src="./src/js/features/FiiList.js"></script>
     <script src="./src/js/features/Modal.js"></script>
     <script src="./src/js/features/Logon.js"></script>
+    <script src="./src/js/features/theme.js"></script>
     <script src="./src/js/features/Crud.js"></script>
     <script src="./src/js/main.js"></script>
-</body>
+  </body>
 </html>

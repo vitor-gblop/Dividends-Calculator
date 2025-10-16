@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="dark-mode">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dividends</title>
+
+    <link rel="stylesheet" href="../../styles/main.css" />
+  </head>
+  <body id="home" class="height-100vh">
+    
+    <br>
+    <div id="logo" class="width-80p margin-auto ">
+      <span style="color: var( --text-color);">investweb</span>
+      <img class="absolute" src="../../assets/Gemini_Generated_Image_tr9atntr9atntr9a-removebg-preview (1).png" alt="" >
+    </div>
+    
+    <div class="margin-top-3"></div>
+    <main id="reports" class="width-90p margin-auto">
+      <h2 class="">Relatorios</h2>
+      <div id="reports-container">
+        <h3>Fundos Imobiliarios registrados</h3>
+        <div id="div-scope-vision" class="display-flex gap-1">
+          <div>fiis</div>
+          <div>valor de compra</div>
+          <div>valor do ultimo fechamento</div>
+        </div>
+        <h3>Retornos mensais</h3>
+        <div id="div-month-return">retorno mensal</div>
+        <!-- Suggestions for more content -->
+        <h3>Resumo dos Dividendos</h3>
+        <div id="div-dividends-summary">
+          <div>Total recebido: R$ 0,00</div>
+          <div>Projeção anual: R$ 0,00</div>
+        </div>
+
+        <h3>Gráfico de Retornos</h3>
+        <canvas id="returns-chart" width="400" height="200"></canvas>
+
+        <!-- <h3>Filtros</h3>
+            <form id="reports-filter-form">
+                <label for="month">Mês:</label>
+                <select id="month" name="month">
+                    <option value="janeiro">Janeiro</option>
+                    <option value="fevereiro">Fevereiro</option>
+                    
+                </select>
+                <label for="year">Ano:</label>
+                <input type="number" id="year" name="year" min="2000" max="2100" value="2024" />
+                <button type="submit">Filtrar</button>
+            </form> -->
+      </div>
+    </main>
+
+    <span class="spacing">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste facilis vel
+      non mollitia, voluptatibus recusandae dicta hic quae? Voluptatibus ipsam
+      voluptatum veniam magnam voluptates velit facilis dolorem qui quo
+      aspernatur.
+    </span>
+
+    <header
+      class="flex-center-items sticky margin-auto child-links-text-decoration-none child-color-white"
+    >
+      <a href="../../../index.html#home">Home</a>
+      <a href="../reports/index.html" id="active">Relatorios</a>
+      <a href="../../../index.html#more-actions">Mais</a>
+    </header>
+
+    <script src="../../js/features/theme.js"></script>
+    <script>
+      verifyTheme();
+    </script>
+    <script src="../../js/features/reports.js"></script>
+    <script>
+      if (typeof initReports === "function") {
+        initReports();
+      }
+    </script>
+  </body>
+</html>

@@ -1,4 +1,6 @@
 listItensSaved();
+loginVerification();
+verifyTheme()
 var intervalId = setInterval(
     function() 
     {

@@ -42,7 +42,8 @@
 
 #final-report {
     padding: 1rem;
-    background-color: #f8f9fa;
+    color: var(--calc-color);
+    background-color: var(--calc-bg-color);
     border-radius: 4px;
 }    
 

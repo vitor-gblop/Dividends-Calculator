@@ -47,7 +47,16 @@ async function handleSaveInvestiment()
         "currentUser": user,
     }
     // console.log(info);
+    let x =""
+    x.indexOf
 
+    // if (data.symbol.indexOf("11") != -1)
+    // {
+    // }
+    // else
+    // {
+    //     window.alert("A sigla informada não é de um FII.");
+    // }
     localStorage.setItem(sigla, JSON.stringify(info));
 }
 function handleSaveUser(user)
@@ -108,7 +117,8 @@ function handleGetInvestiments()
             localStorage.hasOwnProperty(item) 
             && item != "userData"
             && item != "currentUser"    
-            && item != "interests"    ) 
+            && item != "interests"     
+            && item != "currentTheme"    ) 
         {
             const itemData = JSON.parse(localStorage.getItem(item));
             if (itemData.currentUser == user.usuario)

@@ -52,6 +52,7 @@ function signin()
         {
             user = {"usuario": usuario, "senha": senha};
             handleSaveUser(user);
+            window.location.reload()
         }
     }
     else {

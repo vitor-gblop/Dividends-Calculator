@@ -1,44 +1,63 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="pt-br" class="dark-mode">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dividends</title>
 
-    <link rel="stylesheet" href="../../styles/main.css">
-</head>
-<body id="home" class="height-100vh">
-
-    <header class="
-        flex-center-items 
-        sticky
-        margin-auto
-        child-links-text-decoration-none
-        child-color-white
-        ">
-            <a href="../../../index.html#home">Home</a>
-            <a href="../../../index.html#noticias">Artigos</a>
-            <a href="../../../index.html#about">Sobre</a>
-            <a href="../../../index.html#calculator">Mais</a>
-    </header>
-    <br>
-    <section id="settings" class="width-80p margin-auto">
-        <h2>Configurações</h2>
-        <br>
-        <div class="display-flex flex-direction-column gap-1">
-            <!-- <a href="./src/views/calculadora/index.html" class="action-box border-radius-10 padding-2 color-white bg-primary text-center">
+    <link rel="stylesheet" href="../../styles/main.css" />
+  </head>
+  <body id="home" class="height-100vh">
+    <div class="margin-top-3"></div>
+    
+    <main id="settings" class="width-80p margin-auto">
+      <h2>Configurações</h2>
+      <br />
+      <div class="display-flex flex-direction-column gap-1">
+        <!-- <a href="./src/views/calculadora/index.html" class="action-box border-radius-10 padding-2 color-white bg-primary text-center">
                 <span>Calculadora de Dividendos</span>
             </a>
             <a href="#reports" class="action-box border-radius-10 padding-2 color-white bg-secondary text-center">
                 <span>Relatórios</span>
             </a> -->
-            <a href="#signout" class="action-box border-radius-10 padding-2 color-white bg-primary text-center" onclick="signOut()">
-                <span>Sair</span>
-            </a>
-        </div>
-    </section>
+        <a
+          href="#changetheme"
+          class="action-box border-radius-10 padding-2 color-white bg-primary text-center"
+          onclick="change()"
+        >
+          <span>Trocar tema</span>
+        </a>
+        <a
+          href="#signout"
+          class="action-box border-radius-10 padding-2 color-white bg-primary text-center"
+          onclick="signOut()"
+        >
+          <span>Sair</span>
+        </a>
+      </div>
+    </main>
+
+    <span class="spacing">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste facilis vel
+      non mollitia, voluptatibus recusandae dicta hic quae? Voluptatibus ipsam
+      voluptatum veniam magnam voluptates velit facilis dolorem qui quo
+      aspernatur.
+    </span>
+
+    <header
+      class="flex-center-items margin-auto child-links-text-decoration-none child-color-white"
+    >
+      <a href="../../../index.html#home">Home</a>
+      <a href="../reports/index.html">Relatorios</a>
+      <a href="../../../index.html#more-actions" id="active">Mais</a>
+    </header>
 
     <script src="../../js/features/Crud.js"></script>
     <script src="../../js/features/Logon.js"></script>
-</body>
+    <script src="../../js/features/theme.js"></script>
+
+    <script>
+      verifyTheme();
+    </script>
+  </body>
 </html>

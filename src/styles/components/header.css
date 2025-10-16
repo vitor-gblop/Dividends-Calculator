@@ -1,35 +1,39 @@
+body header {
+  position: fixed;
+  bottom: 0;
 
-body header 
-{
-    top: 30px;
-    padding: 0 10px 0 10px;
-    width: fit-content;
+  padding: 0px;
+  width: 100%;
 
-    animation: appear-top 500ms forwards; 
-    will-change: opacity;
-    
-    gap: 3%;
-    
-    /* background-color: var(--header-dark-charcoal); */
-    background-color: #1492f8e8;
-    backdrop-filter: blur(4px);
+  /* animation: appear-top 500ms forwards; 
+	will-change: opacity; */
 
-    border-radius: 15px;
-    z-index: 5;
+  gap: 2%;
+
+  /* background-color: var(--header-dark-charcoal); */
+  background-color: #1492f8e8;
+  backdrop-filter: blur(4px);
+
+  /* border-radius: 15px; */
+  z-index: 5;
 }
 
-body header a
-{
-    padding: 15px 10px 15px 10px;
-    border-radius: 15px;
-    transition: 500ms;
+body header a {
+  text-align: center;
+  padding: 20px 10px 20px 10px;
+  border-radius: 15px;
+  transition: 500ms;
 }
-body header a:hover
-{
-    background-color: #007de4;
+body header a#active {
+  background-color: #007de4;
 }
 
-@media (max-width: 600px)
-{
+@media (max-width: 600px) {
+}
 
+#logo img
+{
+  width: 23%;  
+  top: -15px;
+  left: 80px;  
 }
